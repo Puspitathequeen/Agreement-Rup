@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sibling Agreement — Afsheen Jahan Nujha</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f7fa;font-family:Arial,sans-serif;color:#304754;padding:12px}
+.paper{max-width:700px;margin:auto;background:#fff;min-height:100vh;padding:34px 28px 28px;border:6px dashed #59aec7;border-radius:24px;box-shadow:0 8px 28px #91aab544;text-align:center}
+h1{color:#247991;font-size:34px;margin:0 0 8px}
+.subtitle{font-size:16px;color:#71838c;margin:0 0 26px}
+.intro{font-size:18px;line-height:1.55}
+.box{background:#eaf7fb;border-radius:18px;padding:18px;margin:22px 0;text-align:left}
+.box h2{text-align:center;color:#315d6d;font-size:20px;margin:0 0 10px}
+.box p{font-size:16px;line-height:1.55;margin:8px 0}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.option{border:2px solid #b9dce6;border-radius:16px;padding:15px;background:#fff;cursor:pointer;text-align:left}
+.option input{margin-right:8px;accent-color:#247991}
+.option strong{color:#315d6d}
+.option.selected{border-color:#247991;background:#eefaff}
+.warning{display:none;background:#fff5f5;border:1px solid #efb4b4;color:#9b3535;border-radius:12px;padding:12px;margin:12px 0;font-size:14px}
+button{border:0;border-radius:24px;padding:13px 22px;font-size:15px;font-weight:700;background:#e4f5fa;color:#286579;cursor:pointer}
+button.primary{background:#247991;color:#fff;width:100%}
+button:disabled{opacity:.45;cursor:not-allowed}
+.agreement{display:none;text-align:left}
+.agreement h2{color:#315d6d;text-align:center}
+.agreement p,.agreement li{font-size:16px;line-height:1.65}
+.agreement li{margin:10px 0}
+.signature-title{text-align:center;font-weight:800;color:#315d6d;font-size:20px;margin:25px 0 12px}
+.signature-wrap{border:3px solid #a9d8e5;border-radius:18px;overflow:hidden;background:#fff}
+canvas{width:100%;height:210px;display:block;touch-action:none;cursor:crosshair}
+.controls{display:flex;justify-content:center;gap:12px;margin:13px 0;flex-wrap:wrap}
+.date{text-align:center;font-size:17px;margin:17px 0}
+.status{text-align:center;font-weight:700;color:#247991;min-height:25px}
+footer{text-align:center;color:#718993;font-size:13px;margin-top:22px}
+@media(max-width:500px){.paper{padding:28px 17px;border-width:5px}h1{font-size:29px}.intro{font-size:16px}.options{grid-template-columns:1fr}.agreement p,.agreement li{font-size:15px}}
+</style>
+</head>
+<body>
+<main class="paper">
+  <h1>Sibling Agreement</h1>
+  <p class="subtitle">A personal commitment between siblings</p>
+
+  <div id="questions" style="display:none">
+    <p class="intro">
+      Before entering this agreement, please answer these honestly.
+      There are no wrong answers — but the agreement should only be signed if you genuinely mean it.
+    </p>
+
+    <section class="box">
+      <h2>1. If life gets difficult, will you stand by your sibling?</h2>
+      <div class="options">
+        <label class="option"><input type="radio" name="q1" value="yes"> <strong>YES</strong> — I will try to be there.</label>
+        <label class="option"><input type="radio" name="q1" value="no"> <strong>NO</strong> — I don't agree.</label>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>2. If other family members disagree with your sibling, will you still hear your sibling out and support them?</h2>
+      <div class="options">
+        <label class="option"><input type="radio" name="q2" value="yes"> <strong>YES</strong> — I won't abandon them because others disagree.</label>
+        <label class="option"><input type="radio" name="q2" value="no"> <strong>NO</strong> — I don't agree.</label>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>3. Will you keep this commitment even when you are angry with each other?</h2>
+      <div class="options">
+        <label class="option"><input type="radio" name="q3" value="yes"> <strong>YES</strong> — Arguments won't erase the bond.</label>
+        <label class="option"><input type="radio" name="q3" value="no"> <strong>NO</strong> — I don't agree.</label>
+      </div>
+    </section>
+
+    <div class="warning" id="warning">Please answer all three questions. The agreement only opens when all three answers are YES.</div>
+    <button class="primary" onclick="continueToAgreement()">Continue to Agreement →</button>
+  </div>
+
+  <section class="agreement" id="agreement" style="display:block">
+    <p class="intro">
+      This certifies that <strong>Afsheen Jahan Nujha</strong> voluntarily agrees to the following
+      sibling commitment.
+    </p>
+
+    <div class="box">
+      <h2>🤝 The Commitment</h2>
+      <ol>
+        <li><strong>We are a team.</strong> Whatever happens between us, we will remember that we are siblings and will make a genuine effort not to turn against each other.</li>
+        <li><strong>We stand by each other.</strong> When one of us is struggling, we will try to support the other rather than leaving them alone when they need family.</li>
+        <li><strong>Even when others disagree.</strong> If another family member disagrees with one of us, we will not automatically abandon our sibling. We will listen, understand the situation, and give each other a fair chance to speak.</li>
+        <li><strong>No blind support.</strong> Standing by each other does not mean supporting something harmful or wrong. It means remaining family, being honest, and helping each other make better decisions.</li>
+        <li><strong>Arguments do not cancel family.</strong> We can be angry, disagree, or need space. But temporary conflict will not be treated as permission to permanently abandon the relationship.</li>
+        <li><strong>Respect stays.</strong> No matter how serious the disagreement, we will try to avoid humiliation, unnecessary insults, or deliberately exposing private matters.</li>
+        <li><strong>Keep private things private.</strong> Personal conversations and vulnerabilities shared between us should be protected and not used against each other.</li>
+        <li><strong>Show up when it matters.</strong> When the situation is genuinely important, we will make a reasonable effort to be present, communicate, and help.</li>
+        <li><strong>This goes both ways.</strong> The same loyalty, respect, honesty, and support expected from one sibling is promised to the other.</li>
+        <li><strong>Long-term promise.</strong> Circumstances, opinions, and people may change. The intention of this agreement is that our sibling bond remains something we protect and value.</li>
+      </ol>
+    </div>
+
+    <div class="box">
+      <h2>Declaration</h2>
+      <p>
+        I, <strong>Afsheen Jahan Nujha</strong>, confirm that I have read this agreement,
+        understand what it means, and voluntarily choose to make this commitment to my sibling.
+      </p>
+      <p>
+        <strong>Whatever happens, we will try to stand beside each other — even when other members
+        of the family disagree — while still being honest, respectful, and responsible.</strong>
+      </p>
+    </div>
+
+    <div class="signature-title">✍️ Your Signature</div>
+    <div class="signature-wrap"><canvas id="canvas"></canvas></div>
+    <div class="controls">
+      <button id="paw">🐾 Add Paw Stamp</button>
+      <button id="clear">Clear</button>
+    </div>
+
+    <div class="date">Date: <span id="today"></span></div>
+    <button class="primary" id="sign">Seal Agreement ✓</button>
+    <div class="status" id="status"></div>
+  </section>
+
+  <footer>Personal family commitment • Voluntary • Not a legal contract</footer>
+</main>
+
+<script>
+document.querySelectorAll('.option').forEach(o=>{
+  o.addEventListener('click',()=> {
+    o.parentElement.querySelectorAll('.option').forEach(x=>x.classList.remove('selected'));
+    o.classList.add('selected');
+  });
+});
+function continueToAgreement(){
+  const answers=[...document.querySelectorAll('input[type=radio]:checked')].map(x=>x.value);
+  if(answers.length!==3 || answers.some(x=>x!=='yes')){
+    document.getElementById('warning').style.display='block'; return;
+  }
+  window.location.href='agreement.html';
+}
+
+const canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d');let drawing=false,paw=false;
+function resize(){
+ const d=devicePixelRatio||1,r=canvas.getBoundingClientRect();
+ canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);
+ ctx.lineWidth=3;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#247991';
+}
+addEventListener('resize',resize);resize();
+function pos(e){const r=canvas.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]}
+canvas.addEventListener('pointerdown',e=>{drawing=true;canvas.setPointerCapture(e.pointerId);let[x,y]=pos(e);ctx.beginPath();ctx.moveTo(x,y)});
+canvas.addEventListener('pointermove',e=>{if(!drawing)return;let[x,y]=pos(e);ctx.lineTo(x,y);ctx.stroke()});
+canvas.addEventListener('pointerup',()=>drawing=false);
+canvas.addEventListener('pointercancel',()=>drawing=false);
+document.getElementById('clear').onclick=()=>{ctx.clearRect(0,0,canvas.width,canvas.height);paw=false};
+document.getElementById('paw').onclick=()=>{
+ if(paw)return;paw=true;const r=canvas.getBoundingClientRect(),x=r.width/2,y=r.height/2;
+ ctx.save();ctx.fillStyle='#247991';ctx.beginPath();ctx.ellipse(x,y+12,27,20,0,0,Math.PI*2);ctx.fill();
+ [[x-30,y-22],[x-10,y-30],[x+10,y-30],[x+30,y-22]].forEach(([a,b])=>{ctx.beginPath();ctx.ellipse(a,b,10,15,-.2,0,Math.PI*2);ctx.fill()});ctx.restore();
+};
+const d=new Date();document.getElementById('today').textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+document.getElementById('sign').onclick=()=>{
+ document.getElementById('status').textContent='✓ Agreement sealed — sibling commitment confirmed.';
+ document.getElementById('sign').textContent='Agreement Signed ✓';document.getElementById('sign').disabled=true;
+};
+</script>
+</body>
+</html>
